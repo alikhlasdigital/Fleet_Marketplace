@@ -111,7 +111,17 @@
 </section>
 </div></main></div>
 <div class="toast" id="toast"></div>
-<script>
+
+<!-- Library Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!-- Koneksi Supabase Yuanma -->
+<script src="js/supabaseClient.js"></script>
+
+<!-- JavaScript utama aplikasi -->
+<script src="js/app.js"></script>
+
+  <script>
 const KEY='yuanma_logistik_orders_v1';
 const money=n=>'Rp '+Number(n||0).toLocaleString('id-ID');
 const seed=[
