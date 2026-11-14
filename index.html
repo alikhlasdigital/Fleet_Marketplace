@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yuanma Logistik — Marketplace Logistik</title>
+<style>
+:root{--navy:#10243a;--blue:#1769aa;--cyan:#16a6a1;--ink:#172b3a;--muted:#718096;--bg:#f3f6fa;--line:#e4eaf0;--white:#fff;--orange:#f59e0b;--green:#15966b;--red:#d9534f;--shadow:0 12px 34px rgba(20,45,70,.08)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{display:grid;grid-template-columns:252px 1fr;min-height:100vh}.sidebar{background:var(--navy);color:#dce8f3;padding:24px 16px;display:flex;flex-direction:column;gap:24px}.brand{display:flex;gap:12px;align-items:center;padding:4px 8px}.brandmark{width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,#21b7ad,#1769aa);display:grid;place-items:center;font-size:22px}.brand strong{display:block;font-size:16px;letter-spacing:.2px;color:#fff}.brand small{color:#9fb3c8}.navlabel{font-size:10px;text-transform:uppercase;letter-spacing:1.3px;color:#8da4bb;padding:0 12px;margin-bottom:6px}.nav{display:grid;gap:5px}.nav button{border:0;background:transparent;color:#bfd0df;text-align:left;padding:11px 12px;border-radius:10px;display:flex;align-items:center;gap:12px}.nav button:hover,.nav button.active{background:#203d59;color:#fff}.nav .ico{width:20px;text-align:center;font-size:16px}.sidefoot{margin-top:auto;border-top:1px solid #2b455f;padding:16px 10px;color:#9fb3c8;font-size:12px}.main{min-width:0}.topbar{height:76px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 30px;position:sticky;top:0;z-index:5}.crumb{color:var(--muted)}.crumb b{color:var(--ink)}.topright{display:flex;gap:12px;align-items:center}.role-select{border:1px solid var(--line);background:#fff;padding:9px 12px;border-radius:9px;color:var(--ink)}.avatar{width:36px;height:36px;border-radius:50%;background:#e0f2f1;color:#087f79;display:grid;place-items:center;font-weight:700}.content{padding:28px 30px;max-width:1440px;margin:auto}.page{display:none}.page.active{display:block}.pagehead{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:22px}.eyebrow{color:var(--cyan);font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase}.pagehead h1{font-size:26px;margin:4px 0 5px;color:#132b42}.sub{color:var(--muted);margin:0}.btn{border:0;border-radius:9px;padding:10px 15px;font-weight:700;display:inline-flex;gap:8px;align-items:center;justify-content:center}.primary{background:var(--blue);color:#fff}.primary:hover{background:#10588f}.secondary{background:#eaf2f8;color:#17527e}.outline{background:#fff;border:1px solid var(--line);color:var(--ink)}.danger{background:#fff0ef;color:#b63d39}.grid{display:grid;gap:16px}.stats{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:18px}.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow)}.statlabel{color:var(--muted);font-size:12px}.statvalue{font-size:26px;font-weight:800;margin:6px 0 2px;color:#142e45}.statnote{font-size:11px;color:var(--green)}.staticon{float:right;background:#edf6fb;width:36px;height:36px;border-radius:10px;display:grid;place-items:center;font-size:17px}.cols{grid-template-columns:1.5fr 1fr}.cardhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}.cardhead h3{font-size:15px;margin:0}.link{color:var(--blue);font-weight:700;border:0;background:none}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;white-space:nowrap}th{text-align:left;color:#8291a0;font-size:11px;font-weight:700;padding:11px 10px;border-bottom:1px solid var(--line)}td{padding:13px 10px;border-bottom:1px solid #edf1f5;font-size:12px}tr:last-child td{border-bottom:0}.status{display:inline-block;border-radius:20px;padding:4px 9px;font-size:10px;font-weight:800;background:#edf2f7;color:#536477}.s-confirmed,.s-assigned,.s-picked_up,.s-in_transit{background:#e8f3ff;color:#1769aa}.s-delivered,.s-completed{background:#e6f7ef;color:#11845e}.s-pending_payment,.s-quoted{background:#fff5df;color:#9a6800}.s-cancelled,.s-rejected{background:#ffeded;color:#b23b3b}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.field{display:grid;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:12px;font-weight:700;color:#42566a}.field input,.field select,.field textarea{width:100%;border:1px solid #dce4ec;border-radius:9px;padding:11px 12px;background:#fff;outline:none;color:var(--ink)}.field input:focus,.field select:focus,.field textarea:focus{border-color:#5aa2d4;box-shadow:0 0 0 3px #dceefa}.muted{color:var(--muted)}.pricebox{background:#f0f8fc;border:1px solid #d9edf7;border-radius:12px;padding:16px}.pricebig{font-size:25px;font-weight:850;color:#116b9e}.price-row{display:flex;justify-content:space-between;padding:5px 0;color:#526579;font-size:12px}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}.vehiclegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.vehicle{border:1px solid var(--line);border-radius:11px;padding:12px;cursor:pointer;background:#fff}.vehicle.selected{border:2px solid var(--blue);background:#f1f8fd;padding:11px}.vehicle .vicon{font-size:24px}.vehicle b{display:block;margin-top:5px}.vehicle small{color:var(--muted)}.notice{padding:12px 14px;border-radius:10px;background:#fff8e8;color:#805b12;font-size:12px;margin-bottom:16px}.empty{text-align:center;color:var(--muted);padding:28px}.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.quick button{padding:14px;text-align:left;border:1px solid var(--line);border-radius:11px;background:#fff;color:var(--ink)}.quick button span{display:block;font-size:20px;margin-bottom:6px}.quick button b{font-size:12px}.routepoint{display:flex;gap:10px;align-items:center}.dot{width:9px;height:9px;border-radius:50%;background:var(--cyan)}.stoprow{display:flex;gap:8px;align-items:center}.stoprow input{flex:1}.toast{position:fixed;right:22px;bottom:22px;background:#12344e;color:white;padding:13px 17px;border-radius:10px;box-shadow:var(--shadow);opacity:0;transform:translateY(10px);transition:.25s;z-index:20;pointer-events:none}.toast.show{opacity:1;transform:translateY(0)}.mobilemenu{display:none}
+@media(max-width:980px){.app{grid-template-columns:1fr}.sidebar{position:fixed;left:-270px;top:0;bottom:0;width:252px;z-index:10;transition:.25s}.sidebar.open{left:0}.mobilemenu{display:inline-flex}.stats{grid-template-columns:repeat(2,1fr)}.cols{grid-template-columns:1fr}.content{padding:22px 18px}.topbar{padding:0 18px}}
+@media(max-width:600px){.pagehead{display:block}.pagehead .btn{margin-top:14px}.stats{gap:9px}.card{padding:14px}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.vehiclegrid{grid-template-columns:1fr}.quick{grid-template-columns:1fr}.topbar{height:64px}.content{padding:18px 12px}.statvalue{font-size:21px}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar" id="sidebar">
+  <div class="brand"><div class="brandmark">🚚</div><div><strong>YUANMA LOGISTIK</strong><small>Logistics Marketplace</small></div></div>
+  <div><div class="navlabel">Workspace</div><nav class="nav">
+    <button class="active" data-page="overview"><span class="ico">▦</span>Ringkasan</button>
+    <button data-page="booking"><span class="ico">＋</span>Buat Pengiriman</button>
+    <button data-page="orders"><span class="ico">▤</span>Manajemen Pesanan</button>
+    <button data-page="fleet"><span class="ico">🚛</span>Armada & Driver</button>
+    <button data-page="reports"><span class="ico">▥</span>Laporan</button>
+  </nav></div>
+  <div><div class="navlabel">System</div><nav class="nav">
+    <button data-page="settings"><span class="ico">⚙</span>Pengaturan</button>
+  </nav></div>
+  <div class="sidefoot">Prototype Tahap 1 · v0.1.0<br>Jabodetabek · Indonesia</div>
+</aside>
+<main class="main">
+<header class="topbar">
+  <div class="topright"><button class="btn outline mobilemenu" id="menuBtn">☰</button><div class="crumb">Yuanma / <b id="crumb">Ringkasan</b></div></div>
+  <div class="topright"><select class="role-select" id="roleSelect" aria-label="Pilih tampilan role"><option value="admin">Admin</option><option value="customer">Pelanggan</option><option value="driver">Driver</option><option value="fleet">Pemilik Armada</option></select><div class="avatar" id="avatar">AD</div></div>
+</header>
+<div class="content">
+<section class="page active" id="page-overview">
+  <div class="pagehead"><div><div class="eyebrow">Pusat kendali operasional</div><h1>Ringkasan Bisnis</h1><p class="sub">Pantau aktivitas pengiriman Yuanma Logistik.</p></div><button class="btn primary" onclick="showPage('booking')">＋ Buat Pengiriman</button></div>
+  <div class="grid stats">
+    <div class="card"><span class="staticon">📦</span><div class="statlabel">Total Pesanan</div><div class="statvalue" id="statOrders">0</div><div class="statnote">Seluruh pesanan tersimpan</div></div>
+    <div class="card"><span class="staticon">🚚</span><div class="statlabel">Dalam Pengiriman</div><div class="statvalue" id="statTransit">0</div><div class="statnote">Perlu pemantauan</div></div>
+    <div class="card"><span class="staticon">💰</span><div class="statlabel">Nilai Transaksi</div><div class="statvalue" id="statRevenue">Rp0</div><div class="statnote">Berdasarkan data pesanan demo</div></div>
+    <div class="card"><span class="staticon">🤝</span><div class="statlabel">Mitra Armada</div><div class="statvalue">12</div><div class="statnote">Data mitra contoh</div></div>
+  </div>
+  <div class="grid cols">
+    <div class="card"><div class="cardhead"><h3>Pesanan Terbaru</h3><button class="link" onclick="showPage('orders')">Lihat semua →</button></div><div class="tablewrap"><table><thead><tr><th>ID PESANAN</th><th>PELANGGAN</th><th>RUTE</th><th>STATUS</th><th>TARIF</th></tr></thead><tbody id="recentRows"></tbody></table></div></div>
+    <div class="card"><div class="cardhead"><h3>Akses Cepat</h3></div><div class="quick">
+      <button onclick="showPage('booking')"><span>📝</span><b>Buat pesanan</b></button>
+      <button onclick="showPage('orders')"><span>📋</span><b>Kelola pesanan</b></button>
+      <button onclick="showPage('fleet')"><span>🚛</span><b>Lihat armada</b></button>
+    </div><div style="margin-top:18px"><div class="cardhead"><h3>Catatan Operasional</h3></div><div class="notice">Prototype ini memakai data lokal browser. Jangan gunakan untuk menerima pembayaran atau mengelola pengiriman komersial sungguhan.</div><p class="muted" style="font-size:12px">Tahap berikutnya: Supabase Auth, PostgreSQL, API server, verifikasi mitra, dan integrasi peta.</p></div></div>
+  </div>
+</section>
+
+<section class="page" id="page-booking">
+  <div class="pagehead"><div><div class="eyebrow">Order management</div><h1>Buat Pengiriman Baru</h1><p class="sub">Masukkan detail rute dan pilih kendaraan yang sesuai.</p></div></div>
+  <div class="notice">Harga yang ditampilkan adalah estimasi simulasi. Harga final harus divalidasi melalui backend pada versi produksi.</div>
+  <div class="grid cols">
+    <div class="card">
+      <div class="cardhead"><h3>1. Detail Pengiriman</h3></div>
+      <form id="bookingForm">
+      <div class="formgrid">
+        <div class="field"><label>Nama pelanggan</label><input id="customerName" required placeholder="Nama lengkap / perusahaan"></div>
+        <div class="field"><label>Nomor WhatsApp</label><input id="phone" required placeholder="08xxxxxxxxxx"></div>
+        <div class="field"><label>Lokasi penjemputan</label><input id="pickup" required placeholder="Contoh: Cikarang, Bekasi"></div>
+        <div class="field"><label>Tujuan utama</label><input id="destination" required placeholder="Contoh: Tangerang, Banten"></div>
+        <div class="field"><label>Tanggal penjemputan</label><input id="schedule" type="datetime-local" required></div>
+        <div class="field"><label>Jenis barang</label><select id="cargo"><option>Barang umum</option><option>Material bangunan</option><option>Produk retail</option><option>Peralatan / mesin</option><option>Dokumen / paket</option></select></div>
+        <div class="field full"><label>Catatan barang / instruksi</label><textarea id="notes" rows="2" placeholder="Berat, dimensi, akses lokasi, kebutuhan bongkar muat..."></textarea></div>
+        <div class="field full"><label>Tujuan tambahan (opsional)</label><div id="extraStops"></div><button class="btn outline" type="button" id="addStop" style="justify-self:start">＋ Tambah titik tujuan</button></div>
+      </div>
+      <div class="cardhead" style="margin-top:22px"><h3>2. Pilih Kendaraan</h3></div>
+      <div class="vehiclegrid" id="vehicleChoices">
+        <div class="vehicle selected" data-type="Pickup" data-rate="4500" data-base="80000"><div class="vicon">🛻</div><b>Pickup</b><small>± 1 ton · barang ringan</small></div>
+        <div class="vehicle" data-type="Engkel" data-rate="6500" data-base="130000"><div class="vicon">🚚</div><b>Truk Engkel</b><small>± 2 ton · distribusi</small></div>
+        <div class="vehicle" data-type="CDD" data-rate="8500" data-base="180000"><div class="vicon">🚛</div><b>CDD</b><small>± 4 ton · muatan besar</small></div>
+        <div class="vehicle" data-type="Fuso" data-rate="12000" data-base="250000"><div class="vicon">🚛</div><b>Fuso</b><small>± 8 ton · industri</small></div>
+        <div class="vehicle" data-type="Tronton" data-rate="16000" data-base="350000"><div class="vicon">🚛</div><b>Tronton</b><small>± 15 ton · muatan berat</small></div>
+        <div class="vehicle" data-type="Wingbox" data-rate="19000" data-base="420000"><div class="vicon">🚛</div><b>Wingbox</b><small>Kargo volume besar</small></div>
+      </div>
+      <div class="actions"><button class="btn primary" type="submit">Simpan Pesanan Demo →</button><button class="btn outline" type="reset">Reset formulir</button></div>
+      </form>
+    </div>
+    <div class="card" style="height:max-content;position:sticky;top:94px">
+      <div class="cardhead"><h3>Estimasi Ongkos Kirim</h3><span class="status s-quoted">SIMULASI</span></div>
+      <div class="pricebox"><div class="muted" style="font-size:11px">ESTIMASI TOTAL</div><div class="pricebig" id="priceTotal">Rp 80.000</div><div class="price-row"><span>Kendaraan</span><b id="priceVehicle">Pickup</b></div><div class="price-row"><span>Jarak simulasi</span><b id="priceDistance">20 km</b></div><div class="price-row"><span>Biaya dasar</span><b id="priceBase">Rp 80.000</b></div><div class="price-row"><span>Biaya jarak</span><b id="priceKm">Rp 90.000</b></div><div class="price-row"><span>Multi-stop</span><b id="priceStops">Rp 0</b></div><div class="price-row"><span>Biaya platform (simulasi)</span><b id="priceFee">Rp 0</b></div></div>
+      <p class="muted" style="font-size:11px;margin-top:13px">Jarak 20 km adalah angka demo, bukan hasil pengukuran peta. Fase integrasi Maps akan menghitung jarak dan rute aktual.</p>
+    </div>
+  </div>
+</section>
+
+<section class="page" id="page-orders">
+  <div class="pagehead"><div><div class="eyebrow">Transaction center</div><h1>Manajemen Pesanan</h1><p class="sub">Cari pesanan dan perbarui status operasional demo.</p></div><button class="btn primary" onclick="showPage('booking')">＋ Pesanan Baru</button></div>
+  <div class="card"><div class="formgrid" style="margin-bottom:16px"><div class="field"><label>Cari pesanan</label><input id="orderSearch" placeholder="Nomor, pelanggan, rute..."></div><div class="field"><label>Filter status</label><select id="statusFilter"><option value="">Semua status</option><option value="confirmed">Confirmed</option><option value="assigned">Assigned</option><option value="in_transit">In Transit</option><option value="delivered">Delivered</option><option value="completed">Completed</option><option value="cancelled">Cancelled</option></select></div></div>
+  <div class="tablewrap"><table><thead><tr><th>ID PESANAN</th><th>PELANGGAN</th><th>RUTE</th><th>KENDARAAN</th><th>JADWAL</th><th>STATUS</th><th>TARIF</th><th>AKSI</th></tr></thead><tbody id="orderRows"></tbody></table></div></div>
+</section>
+
+<section class="page" id="page-fleet">
+  <div class="pagehead"><div><div class="eyebrow">Partner network</div><h1>Armada & Driver</h1><p class="sub">Contoh tampilan pengelolaan jaringan mitra.</p></div><button class="btn primary" onclick="toast('Form registrasi mitra tersedia pada fase berikutnya.')">＋ Daftarkan Mitra</button></div>
+  <div class="grid stats"><div class="card"><div class="statlabel">Total kendaraan</div><div class="statvalue">24</div><div class="statnote">Data demo</div></div><div class="card"><div class="statlabel">Driver terverifikasi</div><div class="statvalue">18</div><div class="statnote">Data demo</div></div><div class="card"><div class="statlabel">Siap beroperasi</div><div class="statvalue">15</div><div class="statnote">Data demo</div></div><div class="card"><div class="statlabel">Dalam tugas</div><div class="statvalue">9</div><div class="statnote">Data demo</div></div></div>
+  <div class="card"><div class="cardhead"><h3>Daftar Mitra Armada (Contoh)</h3></div><div class="tablewrap"><table><thead><tr><th>MITRA</th><th>KENDARAAN</th><th>WILAYAH</th><th>STATUS VERIFIKASI</th><th>KETERSEDIAAN</th></tr></thead><tbody><tr><td>PT Armada Jaya</td><td>CDD · B 9123 XX</td><td>Bekasi</td><td><span class="status s-completed">Terverifikasi</span></td><td>Siap</td></tr><tr><td>CV Trans Mandiri</td><td>Pickup · B 8234 YY</td><td>Cikarang</td><td><span class="status s-completed">Terverifikasi</span></td><td>Siap</td></tr><tr><td>Rizky Transport</td><td>Engkel · F 1234 ZZ</td><td>Jakarta Timur</td><td><span class="status s-pending_payment">Menunggu</span></td><td>Belum aktif</td></tr></tbody></table></div></div>
+</section>
+
+<section class="page" id="page-reports">
+  <div class="pagehead"><div><div class="eyebrow">Business intelligence</div><h1>Laporan Bisnis</h1><p class="sub">Ringkasan transaksi berdasarkan data pesanan lokal.</p></div><button class="btn outline" onclick="exportCSV()">↓ Export CSV</button></div>
+  <div class="grid stats"><div class="card"><div class="statlabel">Total nilai pesanan</div><div class="statvalue" id="reportRevenue">Rp0</div></div><div class="card"><div class="statlabel">Rata-rata pesanan</div><div class="statvalue" id="reportAverage">Rp0</div></div><div class="card"><div class="statlabel">Pesanan selesai</div><div class="statvalue" id="reportDone">0</div></div><div class="card"><div class="statlabel">Pesanan aktif</div><div class="statvalue" id="reportActive">0</div></div></div>
+  <div class="card"><div class="cardhead"><h3>Distribusi Status Pesanan</h3></div><div id="statusBars"></div></div>
+</section>
+
+<section class="page" id="page-settings">
+  <div class="pagehead"><div><div class="eyebrow">Workspace configuration</div><h1>Pengaturan</h1><p class="sub">Konfigurasi dasar prototype Yuanma Logistik.</p></div></div>
+  <div class="card"><h3>Profil Platform</h3><div class="formgrid"><div class="field"><label>Nama platform</label><input value="Yuanma Logistik" readonly></div><div class="field"><label>Wilayah operasional awal</label><input value="Jabodetabek" readonly></div><div class="field"><label>Model layanan</label><input value="Marketplace logistik" readonly></div><div class="field"><label>Platform</label><input value="Web responsif" readonly></div></div><div class="notice" style="margin-top:16px">Pengaturan tarif, akun, role, dan integrasi API akan dipindahkan ke backend dan database pada Tahap 2.</div><button class="btn danger" onclick="if(confirm('Hapus seluruh pesanan demo dari browser ini?')){localStorage.removeItem(KEY);orders=[];renderAll();toast('Data demo dihapus.')}">Hapus data demo lokal</button></div>
+</section>
+</div></main></div>
+<div class="toast" id="toast"></div>
+<script>
+const KEY='yuanma_logistik_orders_v1';
+const money=n=>'Rp '+Number(n||0).toLocaleString('id-ID');
+const seed=[
+ {id:'YM-26001',customer:'PT Sumber Makmur',phone:'081234567890',pickup:'Cikarang, Bekasi',destination:'Tangerang, Banten',vehicle:'CDD',schedule:'2026-11-16T09:00',status:'in_transit',price:485000,created:Date.now()-86400000},
+ {id:'YM-26002',customer:'CV Berkah Niaga',phone:'081298765432',pickup:'Jakarta Timur',destination:'Depok, Jawa Barat',vehicle:'Pickup',schedule:'2026-11-17T13:00',status:'confirmed',price:245000,created:Date.now()-50000000},
+ {id:'YM-26003',customer:'Andi Pratama',phone:'081355512345',pickup:'Bogor, Jawa Barat',destination:'Bekasi, Jawa Barat',vehicle:'Engkel',schedule:'2026-11-15T08:00',status:'completed',price:390000,created:Date.now()-90000000}
+];
+let orders=loadOrders(), selectedVehicle={type:'Pickup',rate:4500,base:80000};
+function loadOrders(){try{const v=JSON.parse(localStorage.getItem(KEY));return Array.isArray(v)?v:seed}catch(e){return seed}}
+function save(){localStorage.setItem(KEY,JSON.stringify(orders))}
+function toast(msg){const el=document.getElementById('toast');el.textContent=msg;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),2600)}
+function showPage(name){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id==='page-'+name));document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===name));const labels={overview:'Ringkasan',booking:'Buat Pengiriman',orders:'Manajemen Pesanan',fleet:'Armada & Driver',reports:'Laporan',settings:'Pengaturan'};document.getElementById('crumb').textContent=labels[name]||name;document.getElementById('sidebar').classList.remove('open');renderAll()}
+document.querySelectorAll('.nav button').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
+document.getElementById('menuBtn').addEventListener('click',()=>document.getElementById('sidebar').classList.toggle('open'));
+document.getElementById('roleSelect').addEventListener('change',e=>{const roles={admin:['AD','admin'],customer:['CU','customer'],driver:['DR','driver'],fleet:['FL','fleet']};document.getElementById('avatar').textContent=roles[e.target.value][0];toast('Mode tampilan '+e.target.options[e.target.selectedIndex].text+' dipilih. Hak akses belum diterapkan di prototype.')});
+document.querySelectorAll('.vehicle').forEach(v=>v.addEventListener('click',()=>{document.querySelectorAll('.vehicle').forEach(x=>x.classList.remove('selected'));v.classList.add('selected');selectedVehicle={type:v.dataset.type,rate:+v.dataset.rate,base:+v.dataset.base};calcPrice()}));
+function stopCount(){return document.querySelectorAll('.stop-input').length}
+document.getElementById('addStop').addEventListener('click',()=>{const wrap=document.getElementById('extraStops');const row=document.createElement('div');row.className='stoprow';row.style.marginTop='8px';row.innerHTML='<input class="stop-input" placeholder="Alamat tujuan tambahan"><button class="btn danger remove-stop" type="button">×</button>';row.querySelector('button').onclick=()=>{row.remove();calcPrice()};row.querySelector('input').addEventListener('input',calcPrice);wrap.appendChild(row);calcPrice()});
+function calcPrice(){const km=20,stops=stopCount(),base=selectedVehicle.base,kmCost=km*selectedVehicle.rate,stopCost=stops*25000,subtotal=base+kmCost+stopCost,fee=Math.round(subtotal*.05),total=subtotal+fee;document.getElementById('priceTotal').textContent=money(total);document.getElementById('priceVehicle').textContent=selectedVehicle.type;document.getElementById('priceDistance').textContent=km+' km (demo)';document.getElementById('priceBase').textContent=money(base);document.getElementById('priceKm').textContent=money(kmCost);document.getElementById('priceStops').textContent=money(stopCost);document.getElementById('priceFee').textContent=money(fee);return total}
+document.getElementById('bookingForm').addEventListener('reset',()=>setTimeout(()=>{document.getElementById('extraStops').innerHTML='';document.querySelectorAll('.vehicle').forEach((v,i)=>v.classList.toggle('selected',i===0));selectedVehicle={type:'Pickup',rate:4500,base:80000};calcPrice()},0));
+document.getElementById('bookingForm').addEventListener('submit',e=>{e.preventDefault();const name=document.getElementById('customerName').value.trim(),phone=document.getElementById('phone').value.trim(),pickup=document.getElementById('pickup').value.trim(),destination=document.getElementById('destination').value.trim(),schedule=document.getElementById('schedule').value;if(!name||!phone||!pickup||!destination||!schedule){toast('Lengkapi semua data wajib.');return}const id='YM-'+String(Date.now()).slice(-7);orders.unshift({id,customer:name,phone,pickup,destination,stops:[...document.querySelectorAll('.stop-input')].map(x=>x.value).filter(Boolean),vehicle:selectedVehicle.type,schedule,status:'confirmed',price:calcPrice(),created:Date.now()});save();renderAll();e.target.reset();showPage('orders');toast('Pesanan demo '+id+' berhasil disimpan.')});
+const labels={draft:'Draft',quoted:'Quoted',pending_payment:'Menunggu Pembayaran',confirmed:'Confirmed',assigned:'Assigned',driver_accepted:'Driver Accepted',picked_up:'Picked Up',in_transit:'In Transit',delivered:'Delivered',completed:'Completed',cancelled:'Cancelled',rejected:'Rejected',disputed:'Disputed'};
+function badge(s){return `<span class="status s-${s}">${labels[s]||s}</span>`}
+function fmtDate(s){if(!s)return '-';const d=new Date(s);return isNaN(d)?s:d.toLocaleString('id-ID',{dateStyle:'medium',timeStyle:'short'})}
+function renderRows(){const recent=document.getElementById('recentRows');recent.innerHTML=orders.slice(0,5).map(o=>`<tr><td><b>${o.id}</b></td><td>${esc(o.customer)}</td><td>${esc(o.pickup)} → ${esc(o.destination)}</td><td>${badge(o.status)}</td><td>${money(o.price)}</td></tr>`).join('')||'<tr><td colspan="5" class="empty">Belum ada pesanan.</td></tr>';
+ const q=(document.getElementById('orderSearch')?.value||'').toLowerCase(),f=document.getElementById('statusFilter')?.value||'';
+ const filtered=orders.filter(o=>(!f||o.status===f)&&[o.id,o.customer,o.pickup,o.destination].join(' ').toLowerCase().includes(q));
+ document.getElementById('orderRows').innerHTML=filtered.map(o=>`<tr><td><b>${o.id}</b></td><td>${esc(o.customer)}</td><td>${esc(o.pickup)} → ${esc(o.destination)}</td><td>${esc(o.vehicle)}</td><td>${fmtDate(o.schedule)}</td><td>${badge(o.status)}</td><td>${money(o.price)}</td><td><select aria-label="Ubah status ${o.id}" onchange="updateStatus('${o.id}',this.value)"><option value="">Ubah status</option>${Object.entries(labels).filter(([k])=>!['draft','quoted','pending_payment','rejected','disputed'].includes(k)).map(([k,v])=>`<option value="${k}" ${o.status===k?'selected':''}>${v}</option>`).join('')}</select></td></tr>`).join('')||'<tr><td colspan="8" class="empty">Pesanan tidak ditemukan.</td></tr>'}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function updateStatus(id,status){if(!status)return;const o=orders.find(x=>x.id===id);if(!o)return;o.status=status;save();renderAll();toast('Status '+id+' diperbarui menjadi '+labels[status]+'.')}
+function renderStats(){document.getElementById('statOrders').textContent=orders.length;document.getElementById('statTransit').textContent=orders.filter(o=>['assigned','driver_accepted','picked_up','in_transit'].includes(o.status)).length;const rev=orders.reduce((a,o)=>a+(+o.price||0),0);document.getElementById('statRevenue').textContent=money(rev);document.getElementById('reportRevenue').textContent=money(rev);document.getElementById('reportAverage').textContent=money(orders.length?Math.round(rev/orders.length):0);document.getElementById('reportDone').textContent=orders.filter(o=>['delivered','completed'].includes(o.status)).length;document.getElementById('reportActive').textContent=orders.filter(o=>!['completed','cancelled','rejected'].includes(o.status)).length;
+ const counts=Object.keys(labels).map(k=>[k,orders.filter(o=>o.status===k).length]).filter(x=>x[1]);document.getElementById('statusBars').innerHTML=counts.map(([k,n])=>`<div style="display:grid;grid-template-columns:130px 1fr 28px;gap:10px;align-items:center;margin:12px 0;font-size:12px"><span>${labels[k]}</span><div style="height:9px;background:#edf2f7;border-radius:10px;overflow:hidden"><div style="height:100%;width:${Math.max(4,n/Math.max(1,orders.length)*100)}%;background:#16a6a1;border-radius:10px"></div></div><b>${n}</b></div>`).join('')||'<p class="empty">Belum ada data.</p>'}
+function renderAll(){renderStats();renderRows()}
+document.getElementById('orderSearch').addEventListener('input',renderRows);document.getElementById('statusFilter').addEventListener('change',renderRows);
+function exportCSV(){const cols=['id','customer','phone','pickup','destination','vehicle','schedule','status','price'];const lines=[cols.join(','),...orders.map(o=>cols.map(k=>'"'+String(o[k]??'').replace(/"/g,'""')+'"').join(','))];const blob=new Blob(['\ufeff'+lines.join('\n')],{type:'text/csv;charset=utf-8;'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='yuanma-logistik-pesanan.csv';a.click();URL.revokeObjectURL(a.href);toast('File CSV berhasil disiapkan.')}
+calcPrice();renderAll();
+</script>
+</body></html>
