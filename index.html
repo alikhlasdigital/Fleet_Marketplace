@@ -46,7 +46,7 @@
       <button onclick="showPage('booking')"><span>📝</span><b>Buat pesanan</b></button>
       <button onclick="showPage('orders')"><span>📋</span><b>Kelola pesanan</b></button>
       <button onclick="showPage('fleet')"><span>🚛</span><b>Lihat armada</b></button>
-    </div><div style="margin-top:18px"><div class="cardhead"><h3>Catatan Operasional</h3></div><div class="notice">Prototype ini memakai data lokal browser. Jangan gunakan untuk menerima pembayaran atau mengelola pengiriman komersial sungguhan.</div><p class="muted" style="font-size:12px">Tahap berikutnya: Supabase Auth, PostgreSQL, API server, verifikasi mitra, dan integrasi peta.</p></div></div>
+    </div><div style="margin-top:18px"><div class="cardhead"><h3>Catatan Operasional</h3></div><div class="notice">Pesanan pada versi ini masih tersimpan lokal di browser. Koneksi Supabase hanya disiapkan; sinkronisasi pesanan memerlukan backend/Edge Function dan pengujian RLS. Jangan gunakan untuk transaksi komersial sungguhan.</div><p class="muted" style="font-size:12px">Tahap berikutnya: Supabase Auth, PostgreSQL, API server, verifikasi mitra, dan integrasi peta.</p></div></div>
   </div>
 </section>
 
@@ -111,13 +111,43 @@
 </section>
 </div></main></div>
 <div class="toast" id="toast"></div>
-
-<!-- Library Supabase -->
+<!-- Library Supabase JS v2 -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-<!-- Koneksi Supabase -->
-<script src="js/supabaseClient.js"></script>
+<!-- Inisialisasi koneksi Supabase.
+     Ganti placeholder dengan Publishable Key dari Supabase Dashboard.
+     Jangan pernah memasukkan Secret Key / service_role ke file browser. -->
+<script>
+  (function () {
+    const SUPABASE_URL = "https://mkoqlpwtmnltksyosqwr.supabase.co";
+    const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_NMJp3lTlhlLRirB8RW-TsA_GfleDGsh";
 
+    window.supabaseClient = null;
+
+    if (!window.supabase || typeof window.supabase.createClient !== "function") {
+      console.error("[Yuanma] Library Supabase gagal dimuat. Periksa koneksi internet/CDN.");
+      return;
+    }
+
+    if (!SUPABASE_PUBLISHABLE_KEY ||
+        SUPABASE_PUBLISHABLE_KEY === "sb_publishable_NMJp3lTlhlLRirB8RW-TsA_GfleDGsh") {
+      console.warn("[Yuanma] Library Supabase tersedia, tetapi Publishable Key belum diisi.");
+      return;
+    }
+
+    try {
+      window.supabaseClient = window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_PUBLISHABLE_KEY
+      );
+      console.info("[Yuanma] Supabase client berhasil diinisialisasi.");
+    } catch (error) {
+      console.error("[Yuanma] Gagal membuat Supabase client:", error);
+    }
+  })();
+</script>
+
+<!-- JavaScript aplikasi Tahap 1 -->
 <script>
 const KEY='yuanma_logistik_orders_v1';
 const money=n=>'Rp '+Number(n||0).toLocaleString('id-ID');
